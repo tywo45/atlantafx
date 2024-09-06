@@ -12,6 +12,12 @@
     <name>AtlantaFX</name>
     <description>JavaFX CSS theme collection plus additional controls</description>
     <url>https://github.com/mkpaz/atlantafx</url>
+    
+    <parent>
+		<groupId>org.t-io</groupId>
+		<artifactId>tio-parent</artifactId>
+		<version>3.8.6.v20240801-RELEASE</version>
+	</parent>
 
     <licenses>
         <license>
@@ -58,8 +64,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <java.version>21</java.version>
-        <openjfx.version>22</openjfx.version>
+        <java.version>17</java.version>
         <sass.version>1.54.4</sass.version>
 
         <app.name>AtlantaFX</app.name>
@@ -89,31 +94,6 @@
                 <version>${project.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-controls</artifactId>
-                <version>${openjfx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-fxml</artifactId>
-                <version>${openjfx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-swing</artifactId>
-                <version>${openjfx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-media</artifactId>
-                <version>${openjfx.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.openjfx</groupId>
-                <artifactId>javafx-web</artifactId>
-                <version>${openjfx.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.kordamp.ikonli</groupId>
                 <artifactId>ikonli-javafx</artifactId>
