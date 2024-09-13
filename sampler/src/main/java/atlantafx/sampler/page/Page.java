@@ -4,6 +4,18 @@ package atlantafx.sampler.page;
 
 import static javafx.scene.input.KeyCombination.ALT_DOWN;
 
+import java.net.URI;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
+import org.jetbrains.annotations.Nullable;
+import org.kordamp.ikonli.feather.Feather;
+import org.kordamp.ikonli.javafx.FontIcon;
+import org.kordamp.ikonli.material2.Material2AL;
+
 import atlantafx.base.theme.Styles;
 import atlantafx.base.theme.Tweaks;
 import atlantafx.base.util.BBCodeParser;
@@ -12,12 +24,6 @@ import atlantafx.sampler.event.DefaultEventBus;
 import atlantafx.sampler.event.NavEvent;
 import atlantafx.sampler.event.PageEvent;
 import atlantafx.sampler.layout.ApplicationWindow;
-import java.net.URI;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -29,10 +35,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.layout.HBox;
 import net.datafaker.Faker;
-import org.jetbrains.annotations.Nullable;
-import org.kordamp.ikonli.feather.Feather;
-import org.kordamp.ikonli.javafx.FontIcon;
-import org.kordamp.ikonli.material2.Material2AL;
 
 public interface Page {
 

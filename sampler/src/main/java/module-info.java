@@ -19,7 +19,7 @@ module atlantafx.sampler {
     requires org.jetbrains.annotations;
 
     requires fr.brouillard.oss.cssfx;
-    requires datafaker;
+    requires net.datafaker;
 
     exports atlantafx.sampler;
     exports atlantafx.sampler.fake.domain;

@@ -37,12 +37,10 @@ public final class TextAreaPage extends OutlinePage {
     private ExampleBox usageExample() {
         //snippet_1:start
         var ta1 = new TextArea("Text");
+        
+        System.out.println(FAKER.lorem().paragraph());
 
-        var ta2 = new TextArea(
-            Stream.generate(() -> FAKER.lorem().paragraph())
-                .limit(10)
-                .collect(Collectors.joining("\n"))
-        );
+        var ta2 = new TextArea(FAKER.lorem().paragraph());
         ta2.setWrapText(true);
         //snippet_1:end
 
