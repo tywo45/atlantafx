@@ -69,8 +69,7 @@ public final class IconsPage extends OutlinePage {
 
         var box = new HBox(HGAP_20, accentIcon, successIcon, warningIcon, dangerIcon);
 
-        var description = BBCodeParser.createFormattedText("""
-            You can use pseudo-classes to set the icon color.""");
+        var description = BBCodeParser.createFormattedText("You can use pseudo-classes to set the icon color.");
 
         var example = new ExampleBox(box, new Snippet(getClass(), 1), description);
         example.setAllowDisable(false);
@@ -102,7 +101,7 @@ public final class IconsPage extends OutlinePage {
         var outerIcon1 = new FontIcon(Material2OutlinedAL.BLOCK);
         outerIcon1.getStyleClass().add("outer-icon");
 
-        var innerIcon1 = new FontIcon(Material2MZ.PHOTO_CAMERA);
+        var innerIcon1 = new FontIcon(org.kordamp.ikonli.material2.Material2AL.BRIGHTNESS_4);
         innerIcon1.getStyleClass().add("inner-icon");
 
         var stackIcon1 = new StackedFontIcon();

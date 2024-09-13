@@ -134,6 +134,8 @@ public final class SplitPanePage extends OutlinePage {
 
         var box = new HBox(label);
         box.setAlignment(Pos.CENTER);
+        
+//        HBox.setHgrow(label, Priority.ALWAYS);
 
         return box;
     }

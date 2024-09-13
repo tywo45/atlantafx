@@ -118,13 +118,13 @@
 					<include>atlantafx/sampler/application.properties</include>
 				</includes>
 			</resource>
-			<!-- copy pages for source code viewer  -->
+			<!-- copy pages for source code viewer   -->
 			<resource>
 				<directory>src/main/java/atlantafx/sampler/page</directory>
 				<targetPath>atlantafx/sampler/page</targetPath>
 				<filtering>false</filtering>
 			</resource>
-			<!-- copy icons -->
+			<!-- copy icons 把icons目录下的图片拷到atlantafx/sampler/assets /-->
 			<resource>
 				<directory>icons</directory>
 				<targetPath>atlantafx/sampler/assets</targetPath>
