@@ -108,7 +108,7 @@ public final class ModalPanePage extends OutlinePage {
 
     private ExampleBox contentPositionExample() {
         //snippet_2:start
-        var topDialog = new Dialog(-1, 150);
+        var topDialog = new Dialog(-1, 150);//
         topDialog.getChildren().setAll(new Label(
             FAKER.country().name()
         ));

@@ -150,10 +150,13 @@ public final class MvvmPage extends OutlinePage {
 	private Pane tioGridForm() {
 		Button submitBtn = new Button("提交");
 		submitBtn.setDefaultButton(true);
+		
+		double[] colWidthes = OutlinePage.showOutline ? new double[] { 100, 250, 100, 250 } : new double[] { 150, 300, 150, 300 };
+				
 		return FxForms.gridForm(//
-		        new double[] { 100, 250, 100, 250 }, //
+				colWidthes, //
 		        new Region[][] { //
-		                { new Label("User Name"), new TextField("talent.tan"), new Label("Password"), new PasswordField() }, //
+		                { new Label("First name and second name"), new TextField("talent.tan"), new Label("Password"), new PasswordField() }, //
 		                { new Label("Home"), new TextField("") }, //
 		                { new Label("Phone"), new TextField("18699998888"), new Label("Address"), new TextField("深圳光明") },//
 				}, //

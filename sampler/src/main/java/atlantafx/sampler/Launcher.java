@@ -62,7 +62,7 @@ public class Launcher extends Application {
 
         var root = new ApplicationWindow();
 
-        var scene = new Scene(root, ApplicationWindow.MIN_WIDTH + 80, 1080); //768
+        var scene = new Scene(root, ApplicationWindow.MIN_WIDTH + 80, 768); //768
         scene.setOnKeyPressed(this::dispatchHotkeys);
 
         var tm = ThemeManager.getInstance();
