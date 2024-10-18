@@ -2,20 +2,25 @@
 
 package atlantafx.sampler.page.general;
 
-import static atlantafx.sampler.event.ThemeEvent.EventType;
 import static atlantafx.sampler.theme.ThemeManager.DEFAULT_FONT_SIZE;
+
+import java.net.URI;
+import java.util.Objects;
+
+import org.jetbrains.annotations.Nullable;
+import org.kordamp.ikonli.javafx.FontIcon;
+import org.kordamp.ikonli.material2.Material2OutlinedMZ;
 
 import atlantafx.base.theme.Styles;
 import atlantafx.base.util.BBCodeParser;
 import atlantafx.sampler.Resources;
 import atlantafx.sampler.event.DefaultEventBus;
 import atlantafx.sampler.event.ThemeEvent;
+import atlantafx.sampler.event.ThemeEvent.EventType;
 import atlantafx.sampler.page.OutlinePage;
 import atlantafx.sampler.theme.SamplerTheme;
 import atlantafx.sampler.theme.ThemeManager;
 import atlantafx.sampler.util.Lazy;
-import java.net.URI;
-import java.util.Objects;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.scene.Node;
@@ -34,9 +39,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 import javafx.util.StringConverter;
-import org.jetbrains.annotations.Nullable;
-import org.kordamp.ikonli.javafx.FontIcon;
-import org.kordamp.ikonli.material2.Material2OutlinedMZ;
 
 @SuppressWarnings("UnnecessaryLambda")
 public final class ThemePage extends OutlinePage {
@@ -133,6 +135,7 @@ public final class ThemePage extends OutlinePage {
 
         addPageHeader();
         addNode(createThemeManagementSection());
+//        addForm();
         addSection("Scene Builder", createSceneBuilderSection());
         addSection("Color Palette", createColorPaletteSection());
         addSection("Color Scale", createColorScaleSection());
@@ -167,9 +170,26 @@ public final class ThemePage extends OutlinePage {
         grid.addRow(0, new Label("Color theme"), themeSelector, themeRepoBtn);
         grid.addRow(1, new Label("Accent color"), accentSelector);
         grid.addRow(2, new Label("Font"), new HBox(10, fontFamilyChooser, fontSizeSpinner));
+        
+      
 
         return grid;
     }
+    
+//    private void addForm() {
+//    	Form form = Form.of(
+//    	        Group.of(
+//    	                Field.ofStringType("")
+//    	                        .label("Username"),
+//    	                Field.ofStringType("")
+//    	                        .label("Password")
+//    	                        .required("This field can’t be empty")
+//    	        )
+//    	).title("Login");
+//    	
+//    	FormRenderer formRenderer = new FormRenderer(form);
+//    	addSection("Hello，谭", formRenderer);
+//    }
 
     private Node createSceneBuilderSection() {
         var sceneBuilderBtn = new Button("SceneBuilder Integration");

@@ -27,7 +27,7 @@ public class Lazy<T> implements Supplier<T> {
         }
         return value;
     }
-
+    
     public boolean initialized() {
         return value != null;
     }

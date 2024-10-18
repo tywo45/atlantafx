@@ -4,6 +4,16 @@ package atlantafx.sampler;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Properties;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import atlantafx.sampler.event.BrowseEvent;
 import atlantafx.sampler.event.DefaultEventBus;
 import atlantafx.sampler.event.HotkeyEvent;
@@ -13,18 +23,10 @@ import atlantafx.sampler.theme.ThemeManager;
 import fr.brouillard.oss.cssfx.CSSFX;
 import fr.brouillard.oss.cssfx.api.URIToPathConverter;
 import fr.brouillard.oss.cssfx.impl.log.CSSFXLogger;
-import fr.brouillard.oss.cssfx.impl.log.CSSFXLogger.LogLevel;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Properties;
+import fr.brouillard.oss.cssfx.impl.log.CSSFXLogger.LogLevel;	
 import javafx.application.Application;
-import javafx.application.ConditionalFeature;
 import javafx.application.Platform;
 import javafx.scene.Scene;
-import javafx.scene.SceneAntialiasing;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
@@ -33,6 +35,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class Launcher extends Application {
+	private static Logger log = LoggerFactory.getLogger(Launcher.class);
 
     public static final boolean IS_DEV_MODE = "DEV".equalsIgnoreCase(
         Resources.getPropertyOrEnv("atlantafx.mode", "ATLANTAFX_MODE")
@@ -51,7 +54,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage stage) {
         Thread.currentThread().setUncaughtExceptionHandler(new DefaultExceptionHandler(stage));
-        loadApplicationProperties();
+        loadApplicationProperties();//加载属性文件
 
         if (IS_DEV_MODE) {
             System.out.println("[WARNING] Application is running in development mode.");
@@ -59,7 +62,7 @@ public class Launcher extends Application {
 
         var root = new ApplicationWindow();
 
-        var scene = new Scene(root, ApplicationWindow.MIN_WIDTH + 80, 768);
+        var scene = new Scene(root, ApplicationWindow.MIN_WIDTH + 80, 1080); //768
         scene.setOnKeyPressed(this::dispatchHotkeys);
 
         var tm = ThemeManager.getInstance();
@@ -76,6 +79,8 @@ public class Launcher extends Application {
         loadIcons(stage);
         stage.setResizable(true);
         stage.setOnCloseRequest(t -> Platform.exit());
+        
+//        stage.setOnHidden(System.out::print);
 
         // register event listeners
         DefaultEventBus.getInstance().subscribe(BrowseEvent.class, this::onBrowseEvent);
